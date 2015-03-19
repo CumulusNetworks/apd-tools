@@ -1,0 +1,9 @@
+#include "config.asli"
+
+#include "i2c.asli"
+#include "swd.asli"
+#include "qsfp.asli"
+#include "leds.asli"
+#include "fans.asli"
+#include "thermal.asli"
+#include "swc.asli"

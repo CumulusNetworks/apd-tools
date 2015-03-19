@@ -1,0 +1,369 @@
+Scope (SMB2) // iSMT
+{
+    Device (MUX0)
+    {
+        Name (_ADR, 0x70)
+        Name (_HID, "PRP0001")
+        Name (_CRS, ResourceTemplate()
+        {
+            I2cSerialBus (0x70, ControllerInitiated, I2C_SPEED,
+                          AddressingMode7Bit, "^^SMB2", 0x00,
+                          ResourceConsumer,,)
+            GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                    "\\_SB.PCI0.SMB1.CPL0.GPI1", 0, ResourceConsumer) { 1 }
+        })
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "pca954x" },
+                Package (2) { "channels", 8 },
+                Package (2) { "mux-type", "switch" },
+                Package (2) { "reset-gpio", Package() { ^MUX0, 1, 0, 1 } },
+            }
+        })
+
+        // MUX channels
+        Device (CH00) { Name (_ADR, 0x00) }
+        Device (CH01) { Name (_ADR, 0x01) }
+        Device (CH02) { Name (_ADR, 0x02) }
+        Device (CH03) { Name (_ADR, 0x03) }
+        Device (CH04) { Name (_ADR, 0x04) }
+        Device (CH05) { Name (_ADR, 0x05) }
+        Device (CH06) { Name (_ADR, 0x06) }
+        Device (CH07) { Name (_ADR, 0x07) }
+    }
+}
+
+Scope (SMB2.MUX0.CH00)
+{
+    Device (PSU0) {
+        Name (_HID, "PRP0001")
+        Name (_STR, Unicode("PSU 1"))
+        Name (_CRS, ResourceTemplate ()
+        {
+            GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                    "\\_SB.PCI0.SMB1.CPL0.GPI0", 0, ResourceConsumer) { 0, 1, 2 }
+            I2cSerialBus (0x58, ControllerInitiated, I2C_SPEED,
+                          AddressingMode7Bit, "^^CH00", 0x00,
+                          ResourceConsumer,,)
+        })
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible"       , "pmbus" },
+                Package (2) { "present-gpio"     , Package() { ^PSU0, 0, 0, 1 } },
+                Package (2) { "input-fault-gpio" , Package() { ^PSU0, 0, 1, 1 } },
+                Package (2) { "output-fault-gpio", Package() { ^PSU0, 0, 2, 0 } },
+            }
+        })
+    }
+}
+
+Scope (SMB2.MUX0.CH01)
+{
+    Device (PSU1) {
+        Name (_HID, "PRP0001")
+        Name (_STR, Unicode("PSU 2"))
+        Name (_CRS, ResourceTemplate ()
+        {
+            GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                    "\\_SB.PCI0.SMB1.CPL0.GPI0", 0, ResourceConsumer) { 3, 4, 5 }
+            I2cSerialBus (0x3f, ControllerInitiated, I2C_SPEED,
+                          AddressingMode7Bit, "^^CH01", 0x00,
+                          ResourceConsumer,,)
+        })
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible"       , "pmbus" },
+                Package (2) { "present-gpio"     , Package() { ^PSU1, 0, 0, 1 } },
+                Package (2) { "input-fault-gpio" , Package() { ^PSU1, 0, 1, 1 } },
+                Package (2) { "output-fault-gpio", Package() { ^PSU1, 0, 2, 0 } },
+            }
+        })
+    }
+}
+
+#ifdef UNTESTED
+    Scope (SMB2.MUX0.CH02)
+    {
+        Device (DCD0) {
+            Name (_HID, "PRP0001")
+            Name (_STR, Unicode("DC/DC converter"))
+            Name (_CRS, ResourceTemplate ()
+            {
+                I2cSerialBus (0x08, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "^^CH02", 0x00,
+                              ResourceConsumer,,)
+            })
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "xxx-dc-dc-converter" },
+                }
+            })
+        }
+    }
+#endif
+
+    Scope (SMB2.MUX0.CH03)
+    {
+        Device (TMP0)
+        {
+            Name (_ADR, 0x48)
+            Name (_HID, "PRP0001")
+            Name (_STR, Unicode("Switch ASIC Temperature Sensor (external)"))
+            Name (_CRS, ResourceTemplate()
+            {
+                I2cSerialBus (0x48, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "^^CH03", 0x00,
+                              ResourceConsumer,,)
+            })
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "lm75" },
+                }
+            })
+        }
+    }
+
+    Scope (SMB2.MUX0.CH04)
+    {
+        Device (TMP0)
+        {
+            Name (_ADR, 0x49)
+            Name (_HID, "PRP0001")
+            Name (_STR, Unicode("USB Hub Temperature Sensor"))
+            Name (_CRS, ResourceTemplate()
+            {
+                I2cSerialBus (0x49, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "^^CH04", 0x00,
+                              ResourceConsumer,,)
+            })
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "lm75" },
+                }
+            })
+        }
+    }
+
+    Scope (SMB2.MUX0.CH05)
+    {
+        Device (TMP0)
+        {
+            Name (_ADR, 0x4a)
+            Name (_HID, "PRP0001")
+            Name (_STR, Unicode("Voltage Regulator Temperature Sensor"))
+            Name (_CRS, ResourceTemplate()
+            {
+                I2cSerialBus (0x4a, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "^^CH05", 0x00,
+                              ResourceConsumer,,)
+            })
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "lm75" },
+                }
+            })
+        }
+    }
+
+    Scope (SMB2.MUX0.CH06)
+    {
+        Device (TMP0)
+        {
+            Name (_ADR, 0x4b)
+            Name (_CID, "PRP0001")
+            Name (_STR, Unicode("CPLD Temperature Sensor"))
+            Name (_CRS, ResourceTemplate ()
+            {
+                I2cSerialBus (0x4b, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "^^CH06", 0x00,
+                              ResourceConsumer,,)
+            })
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "lm75" },
+                }
+            })
+        }
+    }
+
+    Scope (SMB2) {
+        Device (EEPS) {
+            Name (_HID, "PRP0001")
+            Name (_STR, Unicode("ONIE EEPROM"))
+            Name (_CRS, ResourceTemplate ()
+            {
+                // 0x57                - address
+                // ControllerInitiated - slave mode
+                // I2C_SPEED              - speed in Hz (400KHz)
+                // AddressingMode7Bit  - addressing
+                // "^SMB2"             - controller
+                // 0x00                - resource source index, reserved (must be 0)
+                // ResourceConsumer    - resource usage, reserved (must be ResourceConsumer)
+                // DescriptorName      - name for an integer constant that will
+                //                       contain this resource descriptor offset in
+                //                       the current resource template buffer
+                // VendorData          - RawDataBuffer for vendor data (populates _VEN)
+                I2cSerialBus (0x57, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "^SMB2", 0x00,
+                              ResourceConsumer,,)
+            })
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "at24" },
+                    Package (2) { "pagesize", 1 },
+                    Package (2) { "byte-len", 256 },
+                    Package (2) { "world-readable", 1 },
+                }
+            })
+        }
+    }
+
+    Scope (SMB1) { // i801
+        Device (SPT0)
+        {
+            Name (_HID, "PRP0001")
+            Name (_STR, Unicode("DIMM Slot 1 Temperature Sensor"))
+            Name (_ADR, 0x1a)
+            Name (_CRS, ResourceTemplate ()
+            {
+                I2cSerialBus (0x1a, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "^SMB1", 0x00,
+                              ResourceConsumer,,)
+            })
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "jc42" },
+                }
+            })
+        }
+
+        Device (SPD0)
+        {
+            Name (_HID, "PRP0001")
+            Name (_STR, Unicode("SPD EEPROM for DIMM Slot 1"))
+            Name (_ADR, 0x52)
+            Name (_CRS, ResourceTemplate ()
+            {
+                I2cSerialBus (0x52, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "^SMB1", 0x00,
+                              ResourceConsumer,,)
+            })
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "at24" },
+                    Package (2) { "pagesize", 1 },
+                    Package (2) { "byte-len", 256 },
+                    Package (2) { "world-readable", 1 },
+                }
+            })
+        }
+
+        Device (SPT1)
+        {
+            Name (_HID, "PRP0001")
+            Name (_STR, Unicode("DIMM Slot 2 Temperature Sensor"))
+            Name (_ADR, 0x1b)
+            Name (_CRS, ResourceTemplate ()
+            {
+                I2cSerialBus (0x1a, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "^SMB1", 0x00,
+                              ResourceConsumer,,)
+            })
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "jc42" },
+                }
+            })
+        }
+
+        Device (SPD1)
+        {
+            Name (_HID, "PRP0001")
+            Name (_STR, Unicode("SPD EEPROM for DIMM Slot 2"))
+            Name (_ADR, 0x53)
+            Name (_CRS, ResourceTemplate ()
+            {
+                I2cSerialBus (0x53, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "^SMB1", 0x00,
+                              ResourceConsumer,,)
+            })
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "at24" },
+                    Package (2) { "pagesize", 1 },
+                    Package (2) { "byte-len", 256 },
+                    Package (2) { "world-readable", 1 },
+                }
+            })
+        }
+
+#ifdef UNTESTED
+        Device (POT0)
+        {
+            Name (_HID, "PRP0001")
+            Name (_STR, Unicode("Digital Potentiometer"))
+            Name (_ADR, 0x2e)
+            Name (_CRS, ResourceTemplate ()
+            {
+                I2cSerialBus (0x2e, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "^SMB1", 0x00,
+                              ResourceConsumer,,)
+            })
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "xxx-isl9027" },
+                }
+            })
+        }
+#endif
+
+#ifdef UNTESTED
+        Device (CLKG)
+        {
+            Name (_HID, "PRP0001")
+            Name (_STR, Unicode("Clock Generator"))
+            Name (_ADR, 0x69)
+            Name (_CRS, ResourceTemplate ()
+            {
+                I2cSerialBus (0x69, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "^SMB1", 0x00,
+                              ResourceConsumer,,)
+            })
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "xxx-clk-gen" },
+                }
+            })
+        }
+#endif
+    }

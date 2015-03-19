@@ -1,0 +1,256 @@
+Scope (SMB1)
+{
+    Device (CPL0)
+    {
+        Name (_HID, "PRP0001")
+        Name (_STR, Unicode("Accton AS6712 CPLD 1"))
+        Name (_ADR, 0x60)
+        Name (_CRS, ResourceTemplate ()
+        {
+            I2cSerialBus (0x60, ControllerInitiated, I2C_SPEED,
+                          AddressingMode7Bit, "^SMB1", 0x00,
+                          ResourceConsumer,,)
+        })
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "swc-cpld" },
+                Package (2) { "protocol", "register" },
+                Package (2) { "register-bits", 8 },
+            }
+        })
+
+        // read-only data registers
+        Device (DAT0)
+        {
+            Name (_ADR, 0x00)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-register" },
+                    Package (2) { "offsets", Package () { 0x00, 0x01 } },
+                    Package (2) { "valid-masks", Package () { 0x0f, 0x1f } },
+                    Package (2) { "volatile-masks", Package () { 0x00, 0x00 } },
+                    Package (2) { "names", Package () { "board-id",
+                                                        "cpld-version" }
+                    },
+                }
+            })
+        }
+
+        // psu status
+        Device (GPI0)
+        {
+            Name (_ADR, 0x02)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-gpio" },
+                    Package (2) { "offsets", Package () { 0x02 } },
+                    Package (2) { "valid-masks", Package () { 0x77 } },
+                    Package (2) { "direction-masks", Package () { 0x00 } },
+                    Package (2) { "names", Package() { "psu1-present-l",
+                                                       "psu1-12v-power-good",
+                                                       "psu1-ac-alert",
+                                                       "psu2-present-l",
+                                                       "psu2-12v-power-good",
+                                                       "psu2-ac-alert" }
+                    },
+                }
+            })
+        }
+
+        // reset control
+        Device (GPI1)
+        {
+            Name (_ADR, 0x04)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-gpio" },
+                    Package (2) { "offsets", Package () { 0x04 } },
+                    Package (2) { "valid-masks", Package () { 0x3e } },
+                    Package (2) { "direction-masks", Package () { 0x3e } },
+                    Package (2) { "names", Package() { "reset-pca9548-l",
+                                                       "reset-bcm54616s-l",
+                                                       "reset-bcm56850-l",
+                                                       "reset-cpld3-l",
+                                                       "reset-cpld2-l" }
+                    },
+                }
+            })
+        }
+
+        // interrupt status
+        Device (INT0)
+        {
+            Name (_ADR, 0x07)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-int-status" },
+                    Package (2) { "offsets", Package () { 0x07 } },
+                    Package (2) { "encoding", Package () { "set-to-clear" } },
+                    Package (2) { "valid-masks", Package () { 0x1f } },
+                    Package (2) { "names", Package() { "int-status-ismt-pca9548-ch03-lm75",
+                                                       "int-status-ismt-pca9548-ch04-lm75",
+                                                       "int-status-ismt-pca9548-ch05-lm75",
+                                                       "int-status-ismt-pca9548-ch06-lm75",
+                                                       "int-status-bcm54616s" }
+                    },
+                }
+            })
+        }
+
+        // System LEDs
+        Device (GPI2)
+        {
+            Name (_ADR, 0x0a)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-gpio" },
+                    Package (2) { "offsets", Package () { 0x0a } },
+                    Package (2) { "valid-masks", Package () { 0x7f } },
+                    Package (2) { "direction-masks", Package () { 0x7f } },
+                    Package (2) { "names" , Package() { "fan-green",
+                                                        "fan-amber",
+                                                        "diag-green",
+                                                        "diag-amber",
+                                                        "locator-blue",
+                                                        "locator-blink",
+                        "diag-blink"}
+                    }
+                }
+            })
+        }
+
+        // PSU LEDs
+        Device (GPI3)
+        {
+            Name (_ADR, 0x0b)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-gpio" },
+                    Package (2) { "offsets", Package () { 0x0b } },
+                    Package (2) { "valid-masks", Package () { 0x0f } },
+                    Package (2) { "direction-masks", Package () { 0x0f } },
+                    Package (2) { "names" , Package() { "psu1-green",
+                                                        "psu1-amber",
+                                                        "psu2-green",
+                                                        "psu2-amber" } }
+                }
+            })
+        }
+
+        // Fan Status
+        Device (GPI4)
+        {
+            Name (_ADR, 0x0c)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-gpio" },
+                    Package (2) { "offsets", Package () { 0x0c } },
+                    Package (2) { "valid-masks", Package () { 0x1f } },
+                    Package (2) { "direction-masks", Package () { 0x00 } },
+                    Package (2) { "names" , Package() { "fan1-ftb-fault",
+                                                        "fan2-ftb-fault",
+                                                        "fan3-ftb-fault",
+                                                        "fan4-ftb-fault",
+                                                        "fan5-ftb-fault" } }
+                }
+            })
+        }
+
+        // Fan PWM
+        Device (CTL0)
+        {
+            Name (_ADR, 0x0d)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-register" },
+                    Package (2) { "offsets", Package () { 0x0d } },
+                    Package (2) { "valid-masks", Package () { 0x1f } },
+                    Package (2) { "writable-masks", Package () { 0xff } },
+                    Package (2) { "reserved-zeros", Package () { 0xe0 } },
+                    Package (2) { "names" , Package() { "fan-pwm" } }
+                }
+            })
+        }
+
+        // Fan Speed
+        Device (DAT1)
+        {
+            Name (_ADR, 0x10)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-register" },
+                    Package (2) { "offsets", Package () { 0x10, 0x11, 0x12, 0x13, 0x14 } },
+                    Package (2) { "valid-masks", Package () { 0xff, 0xff, 0xff, 0xff, 0xff } },
+                    Package (2) { "names" , Package() { "fan5-ftb-rpm",
+                                                        "fan4-ftb-rpm",
+                                                        "fan3-ftb-rpm",
+                                                        "fan2-ftb-rpm",
+                                                        "fan1-ftb-rpm" } },
+                }
+            })
+        }
+
+        // Fan Status
+        Device (GPI7)
+        {
+            Name (_ADR, 0x17)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-gpio" },
+                    Package (2) { "offsets", Package () { 0x17 } },
+                    Package (2) { "valid-masks", Package () { 0x1f } },
+                    Package (2) { "direction-masks", Package () { 0x00 } },
+                    Package (2) { "names" , Package() { "fan1-btf-fault",
+                                                        "fan2-btf-fault",
+                                                        "fan3-btf-fault",
+                                                        "fan4-btf-fault",
+                                                        "fan5-btf-fault" } }
+                }
+            })
+        }
+
+        // Fan Speed (when reversed)
+        Device (DAT2)
+        {
+            Name (_ADR, 0x18)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-register" },
+                    Package (2) { "offsets", Package () { 0x18, 0x19, 0x1a, 0x1b, 0x1c } },
+                    Package (2) { "valid-masks", Package() { 0xff, 0xff, 0xff, 0xff, 0xff } },
+                    Package (2) { "names" , Package() { "fan5-btf-rpm",
+                                                        "fan4-btf-rpm",
+                                                        "fan3-btf-rpm",
+                                                        "fan2-btf-rpm",
+                                                        "fan1-btf-rpm" } },
+                }
+            })
+        }
+
+        // XXX - Fan Direction Missing from Spec
+    }
+}

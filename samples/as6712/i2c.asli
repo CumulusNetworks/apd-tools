@@ -1,0 +1,8 @@
+Scope (_SB.PCI0)
+{
+	#include "i2c_misc.asli"
+
+        #include "cpld0.asli"
+        #include "cpld1.asli"
+        #include "cpld2.asli"
+}

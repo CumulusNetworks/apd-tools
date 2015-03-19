@@ -1,0 +1,3004 @@
+Scope (_SB.PCI0.PEX1)
+{
+    Device (SWD0) // Switch Silicon
+    {
+        // Broadcom Trident 2 (14e4:b854)
+        Name (_HID, "PRP0001")
+        Name (_ADR, 0x00000000)
+        Name (_CRS, ResourceTemplate()
+        {
+            GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                    "\\_SB.PCI0.SMB1.CPL0.GPI1", 0, ResourceConsumer) { 3 }
+        })
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "bcm56850" },
+                Package (2) { "reset-gpio", Package() { ^SWD0, 0, 0, 1 } },
+            }
+        })
+
+        Device (LEUP) // LED microcontroller
+        {
+            Name (_HID, "PRP0001")
+            Name (_CRS, ResourceTemplate()
+            {
+                GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                        "\\_SB.PCI0.SMB1.CPL0.GPI1", 0, ResourceConsumer) { 0 }
+            })
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "bcm56850-ledup" }
+                }
+            })
+
+            Device (SLE0) // Switch LED Shift Register 0
+            {
+                Name (_ADR, 0)
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                        Package (2) { "bits", 72 },
+                        Package (2) { "reset-gpio", Package() { ^^LEUP, 0, 0, 1 } },
+                    }
+                })
+
+                Device (L000)
+                {
+                    Name (_ADR, 0)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 0, 1 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L001)
+                {
+                    Name (_ADR, 1)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 2, 3 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L002)
+                {
+                    Name (_ADR, 2)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 4, 5 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L003)
+                {
+                    Name (_ADR, 3)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 6, 7 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L004)
+                {
+                    Name (_ADR, 4)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 8, 9 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L005)
+                {
+                    Name (_ADR, 5)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 10, 11 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L006)
+                {
+                    Name (_ADR, 6)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 12, 13 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L007)
+                {
+                    Name (_ADR, 7)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 14, 15 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L008)
+                {
+                    Name (_ADR, 8)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 16, 17 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L009)
+                {
+                    Name (_ADR, 9)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 18, 19 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L010)
+                {
+                    Name (_ADR, 10)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 20, 21 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L011)
+                {
+                    Name (_ADR, 11)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 22, 23 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L012)
+                {
+                    Name (_ADR, 12)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 24, 25 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L013)
+                {
+                    Name (_ADR, 13)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 26, 27 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L014)
+                {
+                    Name (_ADR, 14)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 28, 29 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L015)
+                {
+                    Name (_ADR, 15)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 30, 31 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+            }
+
+            Device (SLE1) // Switch LED Shift Register 1
+            {
+                Name (_ADR, 1)
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                        Package (2) { "bits", 72 },
+                        Package (2) { "reset-gpio", Package() { ^^LEUP, 0, 0, 1 } },
+                    }
+                })
+
+                Device (L016)
+                {
+                    Name (_ADR, 16)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 32, 33 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L017)
+                {
+                    Name (_ADR, 17)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 34, 35 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L018)
+                {
+                    Name (_ADR, 18)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 36, 37 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L019)
+                {
+                    Name (_ADR, 19)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 38, 39 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L020)
+                {
+                    Name (_ADR, 20)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 40, 41 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L021)
+                {
+                    Name (_ADR, 21)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 42, 43 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L022)
+                {
+                    Name (_ADR, 22)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 44, 45 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L023)
+                {
+                    Name (_ADR, 23)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 46, 47 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L024)
+                {
+                    Name (_ADR, 24)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 48, 49 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L025)
+                {
+                    Name (_ADR, 25)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 50, 51 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L026)
+                {
+                    Name (_ADR, 26)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 52, 53 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L027)
+                {
+                    Name (_ADR, 27)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 54, 55 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L028)
+                {
+                    Name (_ADR, 28)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 56, 57 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L029)
+                {
+                    Name (_ADR, 29)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 58, 59 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L030)
+                {
+                    Name (_ADR, 30)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 60, 61 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+
+                Device (L031)
+                {
+                    Name (_ADR, 31)
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "offsets", Package() { 62, 63 } },
+                            Package (2) { "color", Package() { 0xff0000, 0x00ff00 } },
+                            Package (2) { "wiring", Package() { "cathode", "cathode" } },
+                        }
+                    })
+                }
+            }
+        }
+
+        Device (MDIO)
+        {
+            Name (_HID, "PRP0001")
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "bcm56850-mdio" }
+                }
+            })
+
+            // PHYs
+        }
+
+        Device (I2C0)
+        {
+            Name (_HID, "PRP0001")
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "bcm56850-i2c" }
+                }
+            })
+        }
+
+        Device (TEMP)
+        {
+            Name (_HID, "PRP0001")
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "bcm56850-temp" }
+                }
+            })
+
+            Device (TMP0) { Name (_ADR, 0) }
+            Device (TMP1) { Name (_ADR, 1) }
+            Device (TMP2) { Name (_ADR, 2) }
+            Device (TMP3) { Name (_ADR, 3) }
+            Device (TMP4) { Name (_ADR, 4) }
+            Device (TMP5) { Name (_ADR, 5) }
+            Device (TMP6) { Name (_ADR, 6) }
+            Device (TMP7) { Name (_ADR, 7) }
+        }
+
+        Device (MAC0)
+        {
+            Name (_HID, "PRP0001")
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "bcm56850-mac" }
+                }
+            })
+
+            Device (X000) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 0) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 0 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 0 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS00, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L000 },
+                    }
+                })
+            }
+
+            Device (X001) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 1) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 1 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 1 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS00, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L000 },
+                    }
+                })
+            }
+
+            Device (X002) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 2) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 2 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 2 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS00, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L000 },
+                    }
+                })
+            }
+
+            Device (X003) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 3) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 3 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 3 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS00, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L000 },
+                    }
+                })
+            }
+
+            Device (X004) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 4) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 4 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 4 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS01, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L001 },
+                    }
+                })
+            }
+
+            Device (X005) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 5) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 5 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 5 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS01, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L001 },
+                    }
+                })
+            }
+
+            Device (X006) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 6) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 6 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 6 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS01, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L001 },
+                    }
+                })
+            }
+
+            Device (X007) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 7) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 7 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 7 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS01, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L001 },
+                    }
+                })
+            }
+
+            Device (X008) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 8) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 8 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 8 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS02, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L002 },
+                    }
+                })
+            }
+
+            Device (X009) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 9) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 9 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 9 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS02, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L002 },
+                    }
+                })
+            }
+
+            Device (X010) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 10) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 10 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 10 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS02, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L002 },
+                    }
+                })
+            }
+
+            Device (X011) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 11) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 11 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 11 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS02, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L002 },
+                    }
+                })
+            }
+
+            Device (X012) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 12) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 12 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 12 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS03, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L003 },
+                    }
+                })
+            }
+
+            Device (X013) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 13) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 13 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 13 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS03, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L003 },
+                    }
+                })
+            }
+
+            Device (X014) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 14) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 14 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 14 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS03, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L003 },
+                    }
+                })
+            }
+
+            Device (X015) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 15) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 15 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 15 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS03, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L003 },
+                    }
+                })
+            }
+
+            Device (X016) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 16) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 16 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 16 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS04, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L004 },
+                    }
+                })
+            }
+
+            Device (X017) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 17) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 17 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 17 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS04, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L004 },
+                    }
+                })
+            }
+
+            Device (X018) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 18) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 18 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 18 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS04, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L004 },
+                    }
+                })
+            }
+
+            Device (X019) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 19) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 19 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 19 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS04, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L004 },
+                    }
+                })
+            }
+
+            Device (X020) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 20) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 20 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 20 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS05, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L005 },
+                    }
+                })
+            }
+
+            Device (X021) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 21) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 21 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 21 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS05, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L005 },
+                    }
+                })
+            }
+
+            Device (X022) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 22) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 22 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 22 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS05, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L005 },
+                    }
+                })
+            }
+
+            Device (X023) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 23) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 23 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 23 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS05, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L005 },
+                    }
+                })
+            }
+
+            Device (X024) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 24) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 24 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 24 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS06, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L006 },
+                    }
+                })
+            }
+
+            Device (X025) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 25) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 25 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 25 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS06, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L006 },
+                    }
+                })
+            }
+
+            Device (X026) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 26) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 26 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 26 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS06, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L006 },
+                    }
+                })
+            }
+
+            Device (X027) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 27) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 27 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 27 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS06, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L006 },
+                    }
+                })
+            }
+
+            Device (X028) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 28) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 28 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 28 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS07, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L007 },
+                    }
+                })
+            }
+
+            Device (X029) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 29) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 29 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 29 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS07, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L007 },
+                    }
+                })
+            }
+
+            Device (X030) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 30) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 30 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 30 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS07, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L007 },
+                    }
+                })
+            }
+
+            Device (X031) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 31) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 31 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 31 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS07, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L007 },
+                    }
+                })
+            }
+
+            Device (X032) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 32) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 32 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 32 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS08, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L008 },
+                    }
+                })
+            }
+
+            Device (X033) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 33) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 33 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 33 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS08, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L008 },
+                    }
+                })
+            }
+
+            Device (X034) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 34) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 34 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 34 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS08, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L008 },
+                    }
+                })
+            }
+
+            Device (X035) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 35) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 35 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 35 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS08, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L008 },
+                    }
+                })
+            }
+
+            Device (X036) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 36) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 36 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 36 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS09, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L009 },
+                    }
+                })
+            }
+
+            Device (X037) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 37) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 37 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 37 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS09, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L009 },
+                    }
+                })
+            }
+
+            Device (X038) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 38) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 38 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 38 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS09, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L009 },
+                    }
+                })
+            }
+
+            Device (X039) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 39) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 39 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 39 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS09, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L009 },
+                    }
+                })
+            }
+
+            Device (X040) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 40) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 40 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 40 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS10, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L010 },
+                    }
+                })
+            }
+
+            Device (X041) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 41) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 41 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 41 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS10, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L010 },
+                    }
+                })
+            }
+
+            Device (X042) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 42) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 42 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 42 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS10, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L010 },
+                    }
+                })
+            }
+
+            Device (X043) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 43) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 43 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 43 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS10, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L010 },
+                    }
+                })
+            }
+
+            Device (X044) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 44) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 44 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 44 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS11, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L011 },
+                    }
+                })
+            }
+
+            Device (X045) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 45) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 45 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 45 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS11, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L011 },
+                    }
+                })
+            }
+
+            Device (X046) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 46) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 46 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 46 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS11, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L011 },
+                    }
+                })
+            }
+
+            Device (X047) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 47) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 47 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 47 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS11, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L011 },
+                    }
+                })
+            }
+
+            Device (X048) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 48) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 48 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 48 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS12, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L012 },
+                    }
+                })
+            }
+
+            Device (X049) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 49) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 49 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 49 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS12, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L012 },
+                    }
+                })
+            }
+
+            Device (X050) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 50) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 50 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 50 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS12, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L012 },
+                    }
+                })
+            }
+
+            Device (X051) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 51) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 51 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 51 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS12, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L012 },
+                    }
+                })
+            }
+
+            Device (X052) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 52) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 52 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 52 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS13, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L013 },
+                    }
+                })
+            }
+
+            Device (X053) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 53) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 53 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 53 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS13, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L013 },
+                    }
+                })
+            }
+
+            Device (X054) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 54) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 54 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 54 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS13, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L013 },
+                    }
+                })
+            }
+
+            Device (X055) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 55) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 55 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 55 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS13, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L013 },
+                    }
+                })
+            }
+
+            Device (X056) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 56) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 56 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 56 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS14, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L014 },
+                    }
+                })
+            }
+
+            Device (X057) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 57) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 57 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 57 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS14, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L014 },
+                    }
+                })
+            }
+
+            Device (X058) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 58) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 58 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 58 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS14, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L014 },
+                    }
+                })
+            }
+
+            Device (X059) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 59) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 59 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 59 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS14, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L014 },
+                    }
+                })
+            }
+
+            Device (X060) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 60) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 60 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 60 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS15, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L015 },
+                    }
+                })
+            }
+
+            Device (X061) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 61) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 61 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 61 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS15, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L015 },
+                    }
+                })
+            }
+
+            Device (X062) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 62) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 62 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 62 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS15, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L015 },
+                    }
+                })
+            }
+
+            Device (X063) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 63) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 63 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 63 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS15, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE0.L015 },
+                    }
+                })
+            }
+
+            Device (X064) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 64) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 64 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 64 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS16, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L016 },
+                    }
+                })
+            }
+
+            Device (X065) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 65) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 65 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 65 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS16, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L016 },
+                    }
+                })
+            }
+
+            Device (X066) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 66) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 66 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 66 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS16, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L016 },
+                    }
+                })
+            }
+
+            Device (X067) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 67) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 67 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 67 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS16, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L016 },
+                    }
+                })
+            }
+
+            Device (X068) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 68) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 68 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 68 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS17, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L017 },
+                    }
+                })
+            }
+
+            Device (X069) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 69) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 69 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 69 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS17, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L017 },
+                    }
+                })
+            }
+
+            Device (X070) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 70) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 70 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 70 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS17, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L017 },
+                    }
+                })
+            }
+
+            Device (X071) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 71) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 71 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 71 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS17, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L017 },
+                    }
+                })
+            }
+
+            Device (X072) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 72) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 72 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 72 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS18, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L018 },
+                    }
+                })
+            }
+
+            Device (X073) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 73) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 73 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 73 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS18, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L018 },
+                    }
+                })
+            }
+
+            Device (X074) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 74) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 74 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 74 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS18, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L018 },
+                    }
+                })
+            }
+
+            Device (X075) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 75) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 75 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 75 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS18, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L018 },
+                    }
+                })
+            }
+
+            Device (X076) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 76) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 76 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 76 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS19, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L019 },
+                    }
+                })
+            }
+
+            Device (X077) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 77) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 77 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 77 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS19, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L019 },
+                    }
+                })
+            }
+
+            Device (X078) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 78) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 78 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 78 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS19, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L019 },
+                    }
+                })
+            }
+
+            Device (X079) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 79) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 79 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 79 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS19, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L019 },
+                    }
+                })
+            }
+
+            Device (X080) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 80) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 80 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 80 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS20, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L020 },
+                    }
+                })
+            }
+
+            Device (X081) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 81) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 81 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 81 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS20, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L020 },
+                    }
+                })
+            }
+
+            Device (X082) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 82) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 82 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 82 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS20, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L020 },
+                    }
+                })
+            }
+
+            Device (X083) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 83) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 83 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 83 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS20, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L020 },
+                    }
+                })
+            }
+
+            Device (X084) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 84) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 84 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 84 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS21, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L021 },
+                    }
+                })
+            }
+
+            Device (X085) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 85) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 85 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 85 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS21, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L021 },
+                    }
+                })
+            }
+
+            Device (X086) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 86) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 86 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 86 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS21, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L021 },
+                    }
+                })
+            }
+
+            Device (X087) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 87) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 87 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 87 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS21, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L021 },
+                    }
+                })
+            }
+
+            Device (X088) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 88) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 88 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 88 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS22, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L022 },
+                    }
+                })
+            }
+
+            Device (X089) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 89) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 89 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 89 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS22, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L022 },
+                    }
+                })
+            }
+
+            Device (X090) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 90) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 90 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 90 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS22, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L022 },
+                    }
+                })
+            }
+
+            Device (X091) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 91) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 91 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 91 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS22, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L022 },
+                    }
+                })
+            }
+
+            Device (X092) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 92) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 92 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 92 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS23, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L023 },
+                    }
+                })
+            }
+
+            Device (X093) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 93) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 93 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 93 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS23, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L023 },
+                    }
+                })
+            }
+
+            Device (X094) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 94) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 94 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 94 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS23, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L023 },
+                    }
+                })
+            }
+
+            Device (X095) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 95) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 95 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 95 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS23, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L023 },
+                    }
+                })
+            }
+
+            Device (X096) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 96) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 96 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 96 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS24, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L024 },
+                    }
+                })
+            }
+
+            Device (X097) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 97) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 97 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 97 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS24, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L024 },
+                    }
+                })
+            }
+
+            Device (X098) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 98) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 98 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 98 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS24, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L024 },
+                    }
+                })
+            }
+
+            Device (X099) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 99) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 99 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 99 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS24, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L024 },
+                    }
+                })
+            }
+
+            Device (X100) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 100) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 100 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 100 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS25, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L025 },
+                    }
+                })
+            }
+
+            Device (X101) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 101) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 101 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 101 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS25, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L025 },
+                    }
+                })
+            }
+
+            Device (X102) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 102) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 102 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 102 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS25, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L025 },
+                    }
+                })
+            }
+
+            Device (X103) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 103) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 103 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 103 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS25, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L025 },
+                    }
+                })
+            }
+
+            Device (X104) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 104) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 104 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 104 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS26, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L026 },
+                    }
+                })
+            }
+
+            Device (X105) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 105) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 105 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 105 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS26, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L026 },
+                    }
+                })
+            }
+
+            Device (X106) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 106) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 106 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 106 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS26, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L026 },
+                    }
+                })
+            }
+
+            Device (X107) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 107) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 107 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 107 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS26, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L026 },
+                    }
+                })
+            }
+
+            Device (X108) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 108) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 108 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 108 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS27, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L027 },
+                    }
+                })
+            }
+
+            Device (X109) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 109) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 109 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 109 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS27, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L027 },
+                    }
+                })
+            }
+
+            Device (X110) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 110) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 110 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 110 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS27, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L027 },
+                    }
+                })
+            }
+
+            Device (X111) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 111) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 111 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 111 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS27, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L027 },
+                    }
+                })
+            }
+
+            Device (X112) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 112) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 112 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 112 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS28, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L028 },
+                    }
+                })
+            }
+
+            Device (X113) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 113) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 113 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 113 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS28, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L028 },
+                    }
+                })
+            }
+
+            Device (X114) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 114) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 114 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 114 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS28, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L028 },
+                    }
+                })
+            }
+
+            Device (X115) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 115) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 115 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 115 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS28, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L028 },
+                    }
+                })
+            }
+
+            Device (X116) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 116) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 116 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 116 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS29, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L029 },
+                    }
+                })
+            }
+
+            Device (X117) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 117) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 117 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 117 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS29, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L029 },
+                    }
+                })
+            }
+
+            Device (X118) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 118) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 118 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 118 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS29, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L029 },
+                    }
+                })
+            }
+
+            Device (X119) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 119) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 119 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 119 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS29, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L029 },
+                    }
+                })
+            }
+
+            Device (X120) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 120) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 120 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 120 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS30, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L030 },
+                    }
+                })
+            }
+
+            Device (X121) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 121) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 121 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 121 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS30, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L030 },
+                    }
+                })
+            }
+
+            Device (X122) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 122) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 122 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 122 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS30, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L030 },
+                    }
+                })
+            }
+
+            Device (X123) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 123) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 123 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 123 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS30, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L030 },
+                    }
+                })
+            }
+
+            Device (X124) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 124) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 124 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 124 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS31, 0 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L031 },
+                    }
+                })
+            }
+
+            Device (X125) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 125) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 125 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 125 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS31, 1 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L031 },
+                    }
+                })
+            }
+
+            Device (X126) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 126) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 126 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 126 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS31, 2 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L031 },
+                    }
+                })
+            }
+
+            Device (X127) // tx/rx pair
+            {
+                Name (_HID, "PRP0001")
+                Name (_ADR, 127) // lowest tx-index
+                Name (_DSD, Package ()
+                {
+                    ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                    Package () {
+                    Package (2) { "compatible", "bcm56850-serdes" },
+                    Package (2) { "tx-index"   , 127 },
+                    Package (2) { "tx-polarity", 0  },
+                    Package (2) { "rx-index"   , 127 },
+                    Package (2) { "rx-polarity", 0  },
+                    Package (2) { "pluggable"  , Package () { \QS31, 3 } },
+                    Package (2) { "leds"       , ^^LEUP.SLE1.L031 },
+                    }
+                })
+            }
+        }
+    }
+}

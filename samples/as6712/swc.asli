@@ -1,0 +1,496 @@
+Device (SWC0)
+{
+    Name (_HID, "PRP0001")
+    Name (_STR, Unicode("Accton AS6712"))
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible", "switch-complex" },
+            Package (2) { "onie-eeprom", \_SB.PCI0.SMB2.EEPS },
+            Package (2) { "management-serial", \_SB.PCI0.LPC0.IUR4 },
+            Package (2) { "management-ethernet", \_SB.PCI0.D00F },
+            Package (2) { "locator-led", \LEDS.LOCA },
+        }
+    })
+
+    Device (P000)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 0)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "1" },
+                Package (2) { "pluggable", \QS00 },
+            }
+        })
+    }
+
+    Device (P001)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 1)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "2" },
+                Package (2) { "pluggable", \QS01 },
+            }
+        })
+    }
+
+    Device (P002)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 2)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "3" },
+                Package (2) { "pluggable", \QS02 },
+            }
+        })
+    }
+
+    Device (P003)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 3)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "4" },
+                Package (2) { "pluggable", \QS03 },
+            }
+        })
+    }
+
+    Device (P004)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 4)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "5" },
+                Package (2) { "pluggable", \QS04 },
+            }
+        })
+    }
+
+    Device (P005)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 5)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "6" },
+                Package (2) { "pluggable", \QS05 },
+            }
+        })
+    }
+
+    Device (P006)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 6)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "7" },
+                Package (2) { "pluggable", \QS06 },
+            }
+        })
+    }
+
+    Device (P007)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 7)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "8" },
+                Package (2) { "pluggable", \QS07 },
+            }
+        })
+    }
+
+    Device (P008)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 8)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "9" },
+                Package (2) { "pluggable", \QS08 },
+            }
+        })
+    }
+
+    Device (P009)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 9)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "10" },
+                Package (2) { "pluggable", \QS09 },
+            }
+        })
+    }
+
+    Device (P010)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 10)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "11" },
+                Package (2) { "pluggable", \QS10 },
+            }
+        })
+    }
+
+    Device (P011)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 11)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "12" },
+                Package (2) { "pluggable", \QS11 },
+            }
+        })
+    }
+
+    Device (P012)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 12)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "13" },
+                Package (2) { "pluggable", \QS12 },
+            }
+        })
+    }
+
+    Device (P013)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 13)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "14" },
+                Package (2) { "pluggable", \QS13 },
+            }
+        })
+    }
+
+    Device (P014)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 14)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "15" },
+                Package (2) { "pluggable", \QS14 },
+            }
+        })
+    }
+
+    Device (P015)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 15)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "16" },
+                Package (2) { "pluggable", \QS15 },
+            }
+        })
+    }
+
+    Device (P016)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 16)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "17" },
+                Package (2) { "pluggable", \QS16 },
+            }
+        })
+    }
+
+    Device (P017)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 17)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "18" },
+                Package (2) { "pluggable", \QS17 },
+            }
+        })
+    }
+
+    Device (P018)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 18)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "19" },
+                Package (2) { "pluggable", \QS18 },
+            }
+        })
+    }
+
+    Device (P019)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 19)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "20" },
+                Package (2) { "pluggable", \QS19 },
+            }
+        })
+    }
+
+    Device (P020)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 20)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "21" },
+                Package (2) { "pluggable", \QS20 },
+            }
+        })
+    }
+
+    Device (P021)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 21)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "22" },
+                Package (2) { "pluggable", \QS21 },
+            }
+        })
+    }
+
+    Device (P022)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 22)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "23" },
+                Package (2) { "pluggable", \QS22 },
+            }
+        })
+    }
+
+    Device (P023)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 23)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "24" },
+                Package (2) { "pluggable", \QS23 },
+            }
+        })
+    }
+
+    Device (P024)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 24)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "25" },
+                Package (2) { "pluggable", \QS24 },
+            }
+        })
+    }
+
+    Device (P025)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 25)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "26" },
+                Package (2) { "pluggable", \QS25 },
+            }
+        })
+    }
+
+    Device (P026)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 26)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "27" },
+                Package (2) { "pluggable", \QS26 },
+            }
+        })
+    }
+
+    Device (P027)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 27)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "28" },
+                Package (2) { "pluggable", \QS27 },
+            }
+        })
+    }
+
+    Device (P028)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 28)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "29" },
+                Package (2) { "pluggable", \QS28 },
+            }
+        })
+    }
+
+    Device (P029)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 29)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "30" },
+                Package (2) { "pluggable", \QS29 },
+            }
+        })
+    }
+
+    Device (P030)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 30)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "31" },
+                Package (2) { "pluggable", \QS30 },
+            }
+        })
+    }
+
+    Device (P031)
+    {
+        Name (_HID, "PRP0001")
+        Name (_ADR, 31)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-port" },
+                Package (2) { "label", "32" },
+                Package (2) { "pluggable", \QS31 },
+            }
+        })
+    }
+}

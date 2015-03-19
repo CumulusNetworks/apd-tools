@@ -1,0 +1,318 @@
+Device (FANC)
+{
+    Name (_HID, "PRP0001")
+    Name (_STR, Unicode("Rear Panel Fan Speed Control"))
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible", "swc-fan" },
+            Package (2) { "pwm", Package() { \_SB.PCI0.SMB1.CPL0.CTL0, 0 } },
+            Package (2) { "pwm-range", Package () { 4, 20 } },
+        }
+    })
+}
+
+Device (FAN0)
+{
+    Name (_HID, "PRP0001")
+    Name (_STR, Unicode("Fan 1 (front-to-back FRU)"))
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI4", 0, ResourceConsumer) { 0 }
+        GpioIo (Shared, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI6", 0, ResourceConsumer) { 0 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible", "swc-fan" },
+
+            Package (2) { "direction", "exhaust" },
+
+            Package (2) { "speed", Package() { \_SB.PCI0.SMB1.CPL0.DAT1, 0 } },
+            Package (2) { "speed-scale", 150 },
+            Package (2) { "speed-range", Package () { 2000, 22000 } },
+
+            Package (2) { "alarm-gpio", Package() { ^FAN0, 0, 0, 0 } },
+        }
+    })
+}
+
+Device (FAN1)
+{
+    Name (_HID, "PRP0001")
+    Name (_STR, Unicode("Fan 2 (front-to-back FRU)"))
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI4", 0, ResourceConsumer) { 1 }
+        GpioIo (Shared, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI6", 0, ResourceConsumer) { 1 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible", "swc-fan" },
+
+            Package (2) { "direction", "exhaust" },
+
+            Package (2) { "speed", Package() { \_SB.PCI0.SMB1.CPL0.DAT1, 1 } },
+            Package (2) { "speed-scale", 150 },
+            Package (2) { "speed-range", Package () { 1000, 20000 } },
+
+            Package (2) { "alarm-gpio", Package() { ^FAN1, 0, 0, 0 } },
+            Package (2) { "present-gpio", Package() { ^FAN1, 1, 0, 1 } },
+        }
+    })
+}
+
+Device (FAN2)
+{
+    Name (_HID, "PRP0001")
+    Name (_STR, Unicode("Fan 3 (front-to-back FRU)"))
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI4", 0, ResourceConsumer) { 2 }
+        GpioIo (Shared, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI6", 0, ResourceConsumer) { 2 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible", "swc-fan" },
+
+            Package (2) { "direction", "exhaust" },
+
+            Package (2) { "speed", Package() { \_SB.PCI0.SMB1.CPL0.DAT1, 2 } },
+            Package (2) { "speed-scale", 150 },
+            Package (2) { "speed-range", Package () { 1000, 22000 } },
+
+            Package (2) { "alarm-gpio", Package() { ^FAN2, 0, 0, 0 } },
+            Package (2) { "present-gpio", Package() { ^FAN2, 1, 0, 1 } },
+        }
+    })
+}
+
+Device (FAN3)
+{
+    Name (_HID, "PRP0001")
+    Name (_STR, Unicode("Fan 4 (front-to-back FRU)"))
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI4", 0, ResourceConsumer) { 3 }
+        GpioIo (Shared, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI6", 0, ResourceConsumer) { 3 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible", "swc-fan" },
+
+            Package (2) { "direction", "exhaust" },
+
+            Package (2) { "speed", Package() { \_SB.PCI0.SMB1.CPL0.DAT1, 3 } },
+            Package (2) { "speed-scale", 150 },
+            Package (2) { "speed-range", Package () { 1000, 22000 } },
+
+            Package (2) { "alarm-gpio", Package() { ^FAN3, 0, 0, 0 } },
+            Package (2) { "present-gpio", Package() { ^FAN3, 1, 0, 1 } },
+        }
+    })
+}
+
+Device (FAN4)
+{
+    Name (_HID, "PRP0001")
+    Name (_STR, Unicode("Fan 5 (front-to-back FRU)"))
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI4", 0, ResourceConsumer) { 4 }
+        GpioIo (Shared, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI6", 0, ResourceConsumer) { 4 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible", "swc-fan" },
+
+            Package (2) { "direction", "exhaust" },
+
+            Package (2) { "speed", Package() { \_SB.PCI0.SMB1.CPL0.DAT1, 4 } },
+            Package (2) { "speed-scale", 150 },
+            Package (2) { "speed-range", Package () { 1000, 22000 } },
+
+            Package (2) { "alarm-gpio", Package() { ^FAN4, 0, 0, 0 } },
+            Package (2) { "present-gpio", Package() { ^FAN4, 1, 0, 1 } },
+        }
+    })
+}
+
+Device (FAR0)
+{
+    Name (_HID, "PRP0001")
+    Name (_STR, Unicode("Fan 1 (back-to-front FRU)"))
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI7", 0, ResourceConsumer) { 0 }
+        GpioIo (Shared, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI6", 0, ResourceConsumer) { 0 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            // XXX - Linux can't deal with shared GpioIos yet
+            Package (2) { "disabled", 1 },
+
+            Package (2) { "compatible", "swc-fan" },
+
+            Package (2) { "direction", "intake" },
+
+            Package (2) { "speed", Package() { \_SB.PCI0.SMB1.CPL0.DAT2, 0 } },
+            Package (2) { "speed-scale", 150 },
+            Package (2) { "speed-range", Package () { 1000, 22000 } },
+
+            Package (2) { "alarm-gpio", Package() { ^FAR0, 0, 0, 0 } },
+            Package (2) { "present-gpio", Package() { ^FAR0, 1, 0, 0 } },
+        }
+    })
+}
+
+Device (FAR1)
+{
+    Name (_HID, "PRP0001")
+    Name (_STR, Unicode("Fan 2 (back-to-front FRU)"))
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI7", 0, ResourceConsumer) { 1 }
+        GpioIo (Shared, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI6", 0, ResourceConsumer) { 1 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            // XXX - Linux can't deal with shared GpioIos yet
+            Package (2) { "disabled", 1 },
+
+            Package (2) { "compatible", "swc-fan" },
+
+            Package (2) { "direction", "intake" },
+
+            Package (2) { "speed", Package() { \_SB.PCI0.SMB1.CPL0.DAT2, 1 } },
+            Package (2) { "speed-scale", 150 },
+            Package (2) { "speed-range", Package () { 1000, 22000 } },
+
+            Package (2) { "alarm-gpio", Package() { ^FAR1, 0, 0, 0 } },
+            Package (2) { "present-gpio", Package() { ^FAR1, 1, 0, 0 } },
+        }
+    })
+}
+
+Device (FAR2)
+{
+    Name (_HID, "PRP0001")
+    Name (_STR, Unicode("Fan 3 (back-to-front FRU)"))
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI7", 0, ResourceConsumer) { 2 }
+        GpioIo (Shared, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI6", 0, ResourceConsumer) { 2 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            // XXX - Linux can't deal with shared GpioIos yet
+            Package (2) { "disabled", 1 },
+
+            Package (2) { "compatible", "swc-fan" },
+
+            Package (2) { "direction", "intake" },
+
+            Package (2) { "speed", Package() { \_SB.PCI0.SMB1.CPL0.DAT2, 2 } },
+            Package (2) { "speed-scale", 150 },
+            Package (2) { "speed-range", Package () { 1000, 22000 } },
+
+            Package (2) { "alarm-gpio", Package() { ^FAR2, 0, 0, 0 } },
+            Package (2) { "present-gpio", Package() { ^FAR2, 1, 0, 0 } },
+        }
+    })
+}
+
+Device (FAR3)
+{
+    Name (_HID, "PRP0001")
+    Name (_STR, Unicode("Fan 4 (back-to-front FRU)"))
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI7", 0, ResourceConsumer) { 3 }
+        GpioIo (Shared, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI6", 0, ResourceConsumer) { 3 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            // XXX - Linux can't deal with shared GpioIos yet
+            Package (2) { "disabled", 1 },
+
+            Package (2) { "compatible", "swc-fan" },
+
+            Package (2) { "direction", "intake" },
+
+            Package (2) { "speed", Package() { \_SB.PCI0.SMB1.CPL0.DAT2, 3 } },
+            Package (2) { "speed-scale", 150 },
+            Package (2) { "speed-range", Package () { 1000, 22000 } },
+
+            Package (2) { "alarm-gpio", Package() { ^FAR3, 0, 0, 0 } },
+            Package (2) { "present-gpio", Package() { ^FAR3, 1, 0, 0 } },
+        }
+    })
+}
+
+Device (FAR4)
+{
+    Name (_HID, "PRP0001")
+    Name (_STR, Unicode("Fan 5 (back-to-front FRU)"))
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI7", 0, ResourceConsumer) { 4 }
+        GpioIo (Shared, PullUp, 0, 0, IoRestrictionInputOnly,
+                "\\_SB.PCI0.SMB1.CPL0.GPI6", 0, ResourceConsumer) { 4 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            // XXX - Linux can't deal with shared GpioIos yet
+            Package (2) { "disabled", 1 },
+
+            Package (2) { "compatible", "swc-fan" },
+
+            Package (2) { "direction", "intake" },
+
+            Package (2) { "speed", Package() { \_SB.PCI0.SMB1.CPL0.DAT2, 4 } },
+            Package (2) { "speed-scale", 150 },
+            Package (2) { "speed-range", Package () { 1000, 22000 } },
+
+            Package (2) { "alarm-gpio", Package() { ^FAR4, 0, 0, 0 } },
+            Package (2) { "present-gpio", Package() { ^FAR4, 1, 0, 0 } },
+        }
+    })
+}

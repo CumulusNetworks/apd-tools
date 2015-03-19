@@ -1,0 +1,78 @@
+Device (SWT0)
+{
+    Name (_HID, "PRP0001")
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible", "switch-complex-thermal" },
+            Package (2) { "polling-delay", 1000 },
+            Package (2) { "sensors", Package () {
+                \_SB.PCI0.SMB2.MUX0.CH03.TMP0,
+                \_SB.PCI0.SMB2.MUX0.CH04.TMP0,
+                \_SB.PCI0.SMB2.MUX0.CH05.TMP0,
+                \_SB.PCI0.PEX1.SWD0.TEMP,
+            } },
+            // 'transform' for setting zone temp calculation rules
+        }
+    })
+
+    Device (TRP0) {
+        Name (_HID, "PRP0001")
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-thermal-trip" },
+                Package (2) { "temperature", 70000 },
+                Package (2) { "hysteresis", 2000 },
+                Package (2) { "type", "active" },
+            }
+        })
+    }
+
+    Device (TRP1) {
+        Name (_HID, "PRP0001")
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-thermal-trip" },
+                Package (2) { "temperature", 90000 },
+                Package (2) { "hysteresis", 2000 },
+                Package (2) { "type", "hot" },
+            }
+        })
+    }
+
+    Device (TRP2) {
+        Name (_HID, "PRP0001")
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-thermal-trip" },
+                Package (2) { "temperature", 125000 },
+                Package (2) { "hysteresis", 2000 },
+                Package (2) { "type", "critical" },
+            }
+        })
+    }
+
+    Device (MAP0) {
+        Name (_HID, "PRP0001")
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "switch-complex-thermal-map" },
+                Package (2) { "trip", ^TRP0 },
+                Package (2) { "device", \FANC },
+                // 'device' has two optional arguments for setting the min
+                // and max state
+
+                // 'contribution' for setting device weights
+            }
+        })
+    }
+}

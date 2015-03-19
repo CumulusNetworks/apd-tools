@@ -1,0 +1,625 @@
+Scope (SMB1)
+{
+    Device (CPL1)
+    {
+        Name (_HID, "PRP0001")
+        Name (_STR, Unicode("Accton AS6712 CPLD 2"))
+        Name (_ADR, 0x62)
+        Name (_CRS, ResourceTemplate ()
+        {
+            I2cSerialBus (0x62, ControllerInitiated, I2C_SPEED,
+                          AddressingMode7Bit, "^SMB1", 0x00,
+                          ResourceConsumer,,)
+        })
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "compatible", "swc-cpld" },
+                Package (2) { "protocol", "register" },
+                Package (2) { "register-bits", 8 },
+            }
+        })
+
+        // read-only data registers
+        Device (DAT0)
+        {
+            Name (_ADR, 0x00)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-register" },
+                    Package (2) { "offsets", Package () { 0x01 } },
+                    Package (2) { "valid-masks", Package () { 0x1f } },
+                    Package (2) { "volatile-masks", Package () { 0x00 } },
+                    Package (2) { "names", Package () { "cpld-version" }
+                    },
+                }
+            })
+        }
+
+        // SFP cage I2C switch
+        Device (PMUX)
+        {
+            Name (_ADR, 0x02)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-i2c-mux" },
+                    Package (2) { "offset", Package () { 0x02 } },
+                    Package (2) { "encoding", "index" },
+                    Package (2) { "deselect-value", 0xff },
+                    Package (2) { "i2c-parent", \_SB.PCI0.SMB1 },
+                }
+            })
+
+            Device (CH00)
+            {
+                Name (_ADR, 0)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 1 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH00", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH01)
+            {
+                Name (_ADR, 1)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 2 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH01", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH02)
+            {
+                Name (_ADR, 2)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 3 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH02", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH03)
+            {
+                Name (_ADR, 3)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 4 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH03", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH04)
+            {
+                Name (_ADR, 4)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 5 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH04", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH05)
+            {
+                Name (_ADR, 5)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 6 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH05", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH06)
+            {
+                Name (_ADR, 6)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 7 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH06", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH07)
+            {
+                Name (_ADR, 7)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 8 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH07", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH08)
+            {
+                Name (_ADR, 8)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 9 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH08", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH09)
+            {
+                Name (_ADR, 9)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 10 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH09", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH10)
+            {
+                Name (_ADR, 10)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 11 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH10", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH11)
+            {
+                Name (_ADR, 11)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 12 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH11", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH12)
+            {
+                Name (_ADR, 12)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 13 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH12", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH13)
+            {
+                Name (_ADR, 13)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 14 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH13", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH14)
+            {
+                Name (_ADR, 14)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 15 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH14", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+
+            Device (CH15)
+            {
+                Name (_ADR, 15)
+
+                Device (TW00) {
+                    Name (_HID, "PRP0001")
+                    Name (_STR, Unicode("Port 16 QSFP Serial Interface"))
+                    Name (_CRS, ResourceTemplate()
+                    {
+                        I2cSerialBus (0x50, ControllerInitiated, I2C_SPEED,
+                                      AddressingMode7Bit, "^^CH15", 0x00,
+                                      ResourceConsumer,,)
+                    })
+                    Name (_DSD, Package ()
+                    {
+                        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                        Package () {
+                            Package (2) { "compatible", "sff-twi" },
+                        }
+                    })
+                }
+            }
+        }
+
+        // qsfp reset
+        Device (GPI0)
+        {
+            Name (_ADR, 0x04)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-gpio" },
+                    Package (2) { "offsets", Package () { 0x04, 0x05 } },
+                    Package (2) { "valid-masks", Package () { 0xff, 0xff } },
+                    Package (2) { "direction-masks", Package () { 0x00, 0x00 } },
+                    Package (2) { "names" , Package() { "port1-reset-l",
+                                                        "port2-reset-l",
+                                                        "port3-reset-l",
+                                                        "port4-reset-l",
+                                                        "port5-reset-l",
+                                                        "port6-reset-l",
+                                                        "port7-reset-l",
+                                                        "port8-reset-l",
+                                                        "port9-reset-l",
+                                                        "port10-reset-l",
+                                                        "port11-reset-l",
+                                                        "port12-reset-l",
+                                                        "port13-reset-l",
+                                                        "port14-reset-l",
+                                                        "port15-reset-l",
+                                                        "port16-reset-l" }
+                    }
+                }
+            })
+        }
+
+        // int presence change interrupts
+        Device (INT0)
+        {
+            Name (_ADR, 0x06)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-int-status" },
+                    Package (2) { "offsets", Package () { 0x06, 0x07 } },
+                    Package (2) { "valid-masks", Package () { 0xff, 0xff } },
+                    Package (2) { "encoding", "set-to-clear" },
+                    Package (2) { "names" , Package() { "int-status-port1-present",
+                                                        "int-status-port2-present",
+                                                        "int-status-port3-present",
+                                                        "int-status-port4-present",
+                                                        "int-status-port5-present",
+                                                        "int-status-port6-present",
+                                                        "int-status-port7-present",
+                                                        "int-status-port8-present",
+                                                        "int-status-port9-present",
+                                                        "int-status-port10-present",
+                                                        "int-status-port11-present",
+                                                        "int-status-port12-present",
+                                                        "int-status-port13-present",
+                                                        "int-status-port14-present",
+                                                        "int-status-port15-present",
+                                                        "int-status-port16-present" }
+                    }
+                }
+            })
+        }
+
+        // qsfp interrupt
+        Device (GPI1)
+        {
+            Name (_ADR, 0x08)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-gpio" },
+                    Package (2) { "offsets", Package () { 0x08, 0x09 } },
+                    Package (2) { "valid-masks", Package () { 0xff, 0xff } },
+                    Package (2) { "direction-masks", Package () { 0x00, 0x00 } },
+                    Package (2) { "names" , Package() { "port1-int-l",
+                                                        "port2-int-l",
+                                                        "port3-int-l",
+                                                        "port4-int-l",
+                                                        "port5-int-l",
+                                                        "port6-int-l",
+                                                        "port7-int-l",
+                                                        "port8-int-l",
+                                                        "port9-int-l",
+                                                        "port10-int-l",
+                                                        "port11-int-l",
+                                                        "port12-int-l",
+                                                        "port13-int-l",
+                                                        "port14-int-l",
+                                                        "port15-int-l",
+                                                        "port16-int-l" }
+                    }
+                }
+            })
+        }
+
+        // qsfp interrupt
+        Device (GPI2)
+        {
+            Name (_ADR, 0x0a)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-gpio" },
+                    Package (2) { "offsets", Package () { 0x0a, 0x0b } },
+                    Package (2) { "valid-masks", Package () { 0xff, 0xff } },
+                    Package (2) { "direction-masks", Package () { 0x00, 0x00 } },
+                    Package (2) { "names" , Package() { "port1-present-l",
+                                                        "port2-present-l",
+                                                        "port3-present-l",
+                                                        "port4-present-l",
+                                                        "port5-present-l",
+                                                        "port6-present-l",
+                                                        "port7-present-l",
+                                                        "port8-present-l",
+                                                        "port9-present-l",
+                                                        "port10-present-l",
+                                                        "port11-present-l",
+                                                        "port12-present-l",
+                                                        "port13-present-l",
+                                                        "port14-present-l",
+                                                        "port15-present-l",
+                                                        "port16-present-l" }
+                    }
+                }
+            })
+        }
+
+        // qsfp lp mode
+        Device (GPI3)
+        {
+            Name (_ADR, 0x0c)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-gpio" },
+                    Package (2) { "offsets", Package () { 0x0c, 0x0d } },
+                    Package (2) { "valid-masks", Package () { 0xff, 0xff } },
+                    Package (2) { "direction-masks", Package () { 0x00, 0x00 } },
+                    Package (2) { "names" , Package() { "port1-lpmode",
+                                                        "port2-lpmode",
+                                                        "port3-lpmode",
+                                                        "port4-lpmode",
+                                                        "port5-lpmode",
+                                                        "port6-lpmode",
+                                                        "port7-lpmode",
+                                                        "port8-lpmode",
+                                                        "port9-lpmode",
+                                                        "port10-lpmode",
+                                                        "port11-lpmode",
+                                                        "port12-lpmode",
+                                                        "port13-lpmode",
+                                                        "port14-lpmode",
+                                                        "port15-lpmode",
+                                                        "port16-lpmode" }
+                    }
+                }
+            })
+        }
+
+        // qsfp module select
+        Device (GPI4)
+        {
+            Name (_ADR, 0x0e)
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "swc-cpld-gpio" },
+                    Package (2) { "offsets", Package () { 0x0e, 0x0f } },
+                    Package (2) { "valid-masks", Package () { 0xff, 0xff } },
+                    Package (2) { "direction-masks", Package () { 0x00, 0x00 } },
+                    Package (2) { "names" , Package() { "port1-modsel-l",
+                                                        "port2-modsel-l",
+                                                        "port3-modsel-l",
+                                                        "port4-modsel-l",
+                                                        "port5-modsel-l",
+                                                        "port6-modsel-l",
+                                                        "port7-modsel-l",
+                                                        "port8-modsel-l",
+                                                        "port9-modsel-l",
+                                                        "port10-modsel-l",
+                                                        "port11-modsel-l",
+                                                        "port12-modsel-l",
+                                                        "port13-modsel-l",
+                                                        "port14-modsel-l",
+                                                        "port15-modsel-l",
+                                                        "port16-modsel-l" }
+                    }
+                }
+            })
+        }
+    }
+}

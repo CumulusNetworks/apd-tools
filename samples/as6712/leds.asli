@@ -1,0 +1,34 @@
+Device (LEDS)
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullUp, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL0.GPI2", 0, ResourceConsumer) { 0, 1, 2, 3, 4, 5 }
+        GpioIo (Exclusive, PullUp, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL0.GPI3", 0, ResourceConsumer) { 0, 1, 2, 3 }
+        GpioIo (Exclusive, PullUp, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL0.GPI5", 0, ResourceConsumer) { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible", "gpio-leds" },
+        }
+    })
+
+    Device (LOCA)
+    {
+        Name (_ADR, 2)
+        Name (_DSD, Package ()
+        {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package (2) { "label", "locator" },
+                Package (2) { "gpios", Package() { ^^LEDS, 0, 4, 0 } },
+                Package (2) { "blink-gpio", Package () { ^^LEDS, 0, 5, 0 } },
+            }
+        })
+    }
+}

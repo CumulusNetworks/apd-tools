@@ -1,0 +1,895 @@
+Device (QS00) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 0 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 0 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 0 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 0 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH00.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS00, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS00, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS00, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS00, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS01) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 1 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 1 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 1 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 1 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH01.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS01, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS01, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS01, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS01, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS02) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 2 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 2 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 2 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 2 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH02.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS02, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS02, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS02, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS02, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS03) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 3 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 3 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 3 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 3 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH03.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS03, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS03, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS03, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS03, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS04) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 4 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 4 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 4 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 4 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH04.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS04, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS04, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS04, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS04, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS05) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 5 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 5 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 5 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 5 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH05.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS05, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS05, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS05, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS05, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS06) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 6 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 6 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 6 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 6 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH06.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS06, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS06, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS06, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS06, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS07) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 7 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 7 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 7 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 7 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH07.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS07, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS07, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS07, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS07, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS08) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 8 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 8 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 8 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 8 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH08.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS08, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS08, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS08, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS08, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS09) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 9 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 9 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 9 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 9 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH09.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS09, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS09, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS09, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS09, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS10) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 10 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 10 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 10 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 10 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH10.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS10, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS10, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS10, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS10, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS11) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 11 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 11 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 11 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 11 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH11.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS11, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS11, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS11, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS11, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS12) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 12 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 12 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 12 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 12 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH12.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS12, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS12, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS12, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS12, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS13) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 13 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 13 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 13 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 13 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH13.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS13, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS13, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS13, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS13, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS14) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 14 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 14 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 14 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 14 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH14.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS14, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS14, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS14, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS14, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS15) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI2", 0, ResourceConsumer) { 15 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI0", 0, ResourceConsumer) { 15 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI3", 0, ResourceConsumer) { 15 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL1.GPI4", 0, ResourceConsumer) { 15 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL1.PMUX.CH15.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS15, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS15, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS15, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS15, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS16) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 0 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 0 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 0 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 0 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH00.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS16, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS16, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS16, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS16, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS17) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 1 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 1 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 1 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 1 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH01.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS17, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS17, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS17, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS17, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS18) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 2 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 2 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 2 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 2 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH02.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS18, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS18, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS18, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS18, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS19) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 3 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 3 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 3 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 3 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH03.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS19, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS19, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS19, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS19, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS20) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 4 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 4 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 4 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 4 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH04.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS20, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS20, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS20, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS20, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS21) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 5 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 5 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 5 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 5 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH05.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS21, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS21, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS21, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS21, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS22) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 6 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 6 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 6 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 6 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH06.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS22, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS22, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS22, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS22, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS23) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 7 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 7 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 7 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 7 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH07.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS23, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS23, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS23, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS23, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS24) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 8 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 8 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 8 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 8 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH08.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS24, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS24, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS24, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS24, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS25) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 9 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 9 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 9 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 9 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH09.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS25, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS25, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS25, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS25, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS26) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 10 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 10 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 10 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 10 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH10.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS26, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS26, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS26, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS26, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS27) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 11 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 11 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 11 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 11 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH11.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS27, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS27, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS27, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS27, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS28) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 12 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 12 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 12 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 12 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH12.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS28, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS28, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS28, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS28, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS29) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 13 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 13 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 13 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 13 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH13.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS29, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS29, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS29, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS29, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS30) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 14 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 14 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 14 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 14 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH14.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS30, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS30, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS30, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS30, 3, 0, 1 }},
+        }
+    })
+}
+
+Device (QS31) // qsfp cage
+{
+    Name (_HID, "PRP0001")
+    Name (_CRS, ResourceTemplate ()
+    {
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI2", 0, ResourceConsumer) { 15 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI0", 0, ResourceConsumer) { 15 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI3", 0, ResourceConsumer) { 15 }
+        GpioIo (Exclusive, PullDefault, 0, 0, IoRestrictionNone,
+                "\\_SB.PCI0.SMB1.CPL2.GPI4", 0, ResourceConsumer) { 15 }
+    })
+    Name (_DSD, Package ()
+    {
+        ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+        Package () {
+            Package (2) { "compatible"      , "sff-qsfpp-fw" },
+            Package (2) { "serial-interface", \_SB.PCI0.SMB1.CPL2.PMUX.CH15.TW00 },
+            Package (2) { "present-gpio"  , Package() { ^QS31, 0, 0, 1 }},
+            Package (2) { "reset-gpio"    , Package() { ^QS31, 1, 0, 1 }},
+            Package (2) { "lpmode-gpio"   , Package() { ^QS31, 2, 0, 0 }},
+            Package (2) { "modsel-gpio"   , Package() { ^QS31, 3, 0, 1 }},
+        }
+    })
+}
