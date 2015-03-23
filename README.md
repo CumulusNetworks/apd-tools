@@ -33,7 +33,8 @@ automate those instructions.  To override the built-in ACPI tables, place a
 file for each table in:
 
 ```sh
-/boot/acpi-slot-<n>/kernel/firmware/acpi
+SLOT=1
+/boot/acpi-slot-$SLOT/kernel/firmware/acpi
 ```
 
 then run `update-dsdt`
