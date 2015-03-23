@@ -19,8 +19,8 @@ complete getting started documentation.
 Prerequisites
 -------------
 
-The iasl compiler from ACPICA (http://acpica.org)
-An OS with APD ACPI changes.
+1. The iasl compiler from [ACPICA](http://acpica.org)
+1. An OS with APD [kernel changes](https://github.com/CumulusNetworks/linux-apd)
 
 ACPI Table Override on Cumulus Linux
 ------------------------------------
@@ -32,18 +32,22 @@ in the Linux kernel tree.  Cumulus Linux provides convienence script that to
 automate those instructions.  To override the built-in ACPI tables, place a
 file for each table in:
 
-    /boot/acpi-slot-<n>/kernel/firmware/acpi
+```sh
+/boot/acpi-slot-<n>/kernel/firmware/acpi
+```
 
-then run 'update-dsdt'
+then run `update-dsdt`
 
 For example, to replace the DSDT for the Cumulus Linux image in install slot 1:
 
-    mkdir -p /boot/acpi-slot-1/kernel/firmware/acpi
-    cp dsdt.aml /boot/acpi-slot-1/kernel/firmware/acpi
-    update-dsdt
+```sh
+mkdir -p /boot/acpi-slot-1/kernel/firmware/acpi
+cp dsdt.aml /boot/acpi-slot-1/kernel/firmware/acpi
+update-dsdt
+```
 
 This will create grub menu entries to boot Cumulus Linux with the updated DSDT.
 
 Reboot and select the "ACPI override" grub menu option.  It's a good idea to
-attempt the _PRT "hello world" example from initrd_table_override.txt to prove
+attempt the \_PRT "hello world" example from initrd_table_override.txt to prove
 the mechanism is working.
