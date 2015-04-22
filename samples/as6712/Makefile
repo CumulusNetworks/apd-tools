@@ -25,3 +25,18 @@ dsdt.aml: dsdt.asl *.asli
 
 clean:
 	rm -f dsdt.aml
+
+SLOT=$(shell if [ -x /usr/cumulus/bin/cl-img-select ]; then \
+                 cl-img-select|grep active|awk '{print $$4}'; \
+             else \
+                 echo NONE; \
+             fi)
+.PHONY: install
+install: dsdt.aml
+ifneq ($(SLOT), NONE)
+	mkdir -p /boot/acpi-slot-$(SLOT)/kernel/firmware/acpi/
+	cp dsdt.aml /boot/acpi-slot-$(SLOT)/kernel/firmware/acpi/
+else
+	@echo "cl-img-select required for install target"
+	@false
+endif
