@@ -27,7 +27,7 @@ clean:
 	rm -f dsdt.aml
 
 SLOT=$(shell if [ -x /usr/cumulus/bin/cl-img-select ]; then \
-                 cl-img-select|grep active|awk '{print $$4}'; \
+                 /usr/cumulus/bin/cl-img-select|grep active|awk '{print $$4}'; \
              else \
                  echo NONE; \
              fi)
