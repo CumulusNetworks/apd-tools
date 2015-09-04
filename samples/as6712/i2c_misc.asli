@@ -38,9 +38,7 @@ Scope (SMB2) // iSMT
         {
             ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
             Package () {
-                Package (2) { "compatible", "pca954x" },
-                Package (2) { "channels", 8 },
-                Package (2) { "mux-type", "switch" },
+                Package (2) { "compatible", "nxp,pca9548" },
                 Package (2) { "reset-gpio", Package() { ^MUX0, 1, 0, 1 } },
             }
         })
@@ -249,8 +247,8 @@ Scope (SMB2.MUX0.CH01)
             {
                 ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
                 Package () {
-                    Package (2) { "compatible", "at24" },
-                    Package (2) { "pagesize", 1 },
+                    Package (2) { "compatible", "atmel,at24" },
+                    Package (2) { "pagesize", 8 },
                     Package (2) { "byte-len", 256 },
                     Package (2) { "world-readable", 1 },
                 }
@@ -294,7 +292,7 @@ Scope (SMB2.MUX0.CH01)
             {
                 ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
                 Package () {
-                    Package (2) { "compatible", "at24" },
+                    Package (2) { "compatible", "atmel,at24" },
                     Package (2) { "pagesize", 1 },
                     Package (2) { "byte-len", 256 },
                     Package (2) { "world-readable", 1 },
@@ -309,7 +307,7 @@ Scope (SMB2.MUX0.CH01)
             Name (_ADR, 0x1b)
             Name (_CRS, ResourceTemplate ()
             {
-                I2cSerialBus (0x1a, ControllerInitiated, I2C_SPEED,
+                I2cSerialBus (0x1b, ControllerInitiated, I2C_SPEED,
                               AddressingMode7Bit, "^SMB1", 0x00,
                               ResourceConsumer,,)
             })
@@ -337,7 +335,7 @@ Scope (SMB2.MUX0.CH01)
             {
                 ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
                 Package () {
-                    Package (2) { "compatible", "at24" },
+                    Package (2) { "compatible", "atmel,at24" },
                     Package (2) { "pagesize", 1 },
                     Package (2) { "byte-len", 256 },
                     Package (2) { "world-readable", 1 },
