@@ -30,9 +30,10 @@ Device (SWT0)
             Package (2) { "compatible", "switch-complex-thermal" },
             Package (2) { "polling-delay", 1000 },
             Package (2) { "sensors", Package () {
-                \_SB.PCI0.SMB2.MUX0.CH03.TMP0,
-                \_SB.PCI0.SMB2.MUX0.CH04.TMP0,
-                \_SB.PCI0.SMB2.MUX0.CH05.TMP0,
+                \_SB.PCI0.TMP0,
+                \_SB.PCI0.TMP1,
+                \_SB.PCI0.TMP2,
+                \_SB.PCI0.TMP3,
                 \_SB.PCI0.PEX1.SWD0.TEMP,
             } },
             // 'transform' for setting zone temp calculation rules

@@ -130,93 +130,89 @@ Scope (SMB2.MUX0.CH01)
     }
 #endif
 
-    Scope (SMB2.MUX0.CH03)
+    Scope (PCI0)
     {
         Device (TMP0)
         {
-            Name (_ADR, 0x48)
-            Name (_HID, "PRP0001")
-            Name (_STR, Unicode("Switch ASIC Temperature Sensor (external)"))
-            Name (_CRS, ResourceTemplate()
-            {
-                I2cSerialBus (0x48, ControllerInitiated, I2C_SPEED,
-                              AddressingMode7Bit, "^^CH03", 0x00,
-                              ResourceConsumer,,)
-            })
-            Name (_DSD, Package ()
-            {
-                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
-                Package () {
-                    Package (2) { "compatible", "lm75" },
-                }
-            })
-        }
-    }
-
-    Scope (SMB2.MUX0.CH04)
-    {
-        Device (TMP0)
-        {
-            Name (_ADR, 0x49)
             Name (_HID, "PRP0001")
             Name (_STR, Unicode("USB Hub Temperature Sensor"))
             Name (_CRS, ResourceTemplate()
             {
-                I2cSerialBus (0x49, ControllerInitiated, I2C_SPEED,
-                              AddressingMode7Bit, "^^CH04", 0x00,
+                I2cSerialBus (0x48, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "\\_SB.PCI0.SMB2.MUX0.CH04", 0x00,
                               ResourceConsumer,,)
             })
             Name (_DSD, Package ()
             {
                 ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
                 Package () {
-                    Package (2) { "compatible", "lm75" },
+                    Package (2) { "compatible", "national,lm75" },
                 }
             })
         }
     }
 
-    Scope (SMB2.MUX0.CH05)
+    Scope (PCI0)
     {
-        Device (TMP0)
+        Device (TMP1)
         {
-            Name (_ADR, 0x4a)
             Name (_HID, "PRP0001")
             Name (_STR, Unicode("Voltage Regulator Temperature Sensor"))
             Name (_CRS, ResourceTemplate()
             {
-                I2cSerialBus (0x4a, ControllerInitiated, I2C_SPEED,
-                              AddressingMode7Bit, "^^CH05", 0x00,
+                I2cSerialBus (0x49, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "\\_SB.PCI0.SMB2.MUX0.CH05", 0x00,
                               ResourceConsumer,,)
             })
             Name (_DSD, Package ()
             {
                 ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
                 Package () {
-                    Package (2) { "compatible", "lm75" },
+                    Package (2) { "compatible", "national,lm75" },
                 }
             })
         }
     }
 
-    Scope (SMB2.MUX0.CH06)
+    Scope (PCI0)
     {
-        Device (TMP0)
+        Device (TMP2)
         {
-            Name (_ADR, 0x4b)
-            Name (_CID, "PRP0001")
+            Name (_HID, "PRP0001")
             Name (_STR, Unicode("CPLD Temperature Sensor"))
             Name (_CRS, ResourceTemplate ()
             {
-                I2cSerialBus (0x4b, ControllerInitiated, I2C_SPEED,
-                              AddressingMode7Bit, "^^CH06", 0x00,
+                I2cSerialBus (0x4a, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "\\_SB.PCI0.SMB2.MUX0.CH06", 0x00,
                               ResourceConsumer,,)
             })
             Name (_DSD, Package ()
             {
                 ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
                 Package () {
-                    Package (2) { "compatible", "lm75" },
+                    Package (2) { "compatible", "national,lm75" },
+                }
+            })
+        }
+    }
+
+    Scope (PCI0)
+    {
+        Device (TMP3)
+        {
+            Name (_HID, "PRP0001")
+            Name (_STR, Unicode("CPLD Temperature Sensor"))
+            Name (_CRS, ResourceTemplate ()
+            {
+                I2cSerialBus (0x4b, ControllerInitiated, I2C_SPEED,
+                              AddressingMode7Bit, "\\_SB.PCI0.SMB2.MUX0.CH07", 0x00,
+                              ResourceConsumer,,)
+            })
+            Name (_DSD, Package ()
+            {
+                ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+                Package () {
+                    Package (2) { "compatible", "national,lm75" },
                 }
             })
         }
@@ -240,7 +236,7 @@ Scope (SMB2.MUX0.CH01)
                 //                       the current resource template buffer
                 // VendorData          - RawDataBuffer for vendor data (populates _VEN)
                 I2cSerialBus (0x57, ControllerInitiated, I2C_SPEED,
-                              AddressingMode7Bit, "^SMB2", 0x00,
+                              AddressingMode7Bit, "\\_SB.PCI0.SMB2", 0x00,
                               ResourceConsumer,,)
             })
             Name (_DSD, Package ()
@@ -249,7 +245,7 @@ Scope (SMB2.MUX0.CH01)
                 Package () {
                     Package (2) { "compatible", "atmel,at24" },
                     Package (2) { "pagesize", 8 },
-                    Package (2) { "byte-len", 256 },
+                    Package (2) { "size", 256 },
                     Package (2) { "world-readable", 1 },
                 }
             })
@@ -265,14 +261,14 @@ Scope (SMB2.MUX0.CH01)
             Name (_CRS, ResourceTemplate ()
             {
                 I2cSerialBus (0x1a, ControllerInitiated, I2C_SPEED,
-                              AddressingMode7Bit, "^SMB1", 0x00,
+                              AddressingMode7Bit, "\\_SB.PCI0.SMB1", 0x00,
                               ResourceConsumer,,)
             })
             Name (_DSD, Package ()
             {
                 ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
                 Package () {
-                    Package (2) { "compatible", "jc42" },
+                    Package (2) { "compatible", "jedec,jc42" },
                 }
             })
         }
@@ -285,17 +281,14 @@ Scope (SMB2.MUX0.CH01)
             Name (_CRS, ResourceTemplate ()
             {
                 I2cSerialBus (0x52, ControllerInitiated, I2C_SPEED,
-                              AddressingMode7Bit, "^SMB1", 0x00,
+                              AddressingMode7Bit, "\\_SB.PCI0.SMB1", 0x00,
                               ResourceConsumer,,)
             })
             Name (_DSD, Package ()
             {
                 ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
                 Package () {
-                    Package (2) { "compatible", "atmel,at24" },
-                    Package (2) { "pagesize", 1 },
-                    Package (2) { "byte-len", 256 },
-                    Package (2) { "world-readable", 1 },
+                    Package (2) { "compatible", "jedec,spd" },
                 }
             })
         }
@@ -308,14 +301,14 @@ Scope (SMB2.MUX0.CH01)
             Name (_CRS, ResourceTemplate ()
             {
                 I2cSerialBus (0x1b, ControllerInitiated, I2C_SPEED,
-                              AddressingMode7Bit, "^SMB1", 0x00,
+                              AddressingMode7Bit, "\\_SB.PCI0.SMB1", 0x00,
                               ResourceConsumer,,)
             })
             Name (_DSD, Package ()
             {
                 ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
                 Package () {
-                    Package (2) { "compatible", "jc42" },
+                    Package (2) { "compatible", "jedec,jc42" },
                 }
             })
         }
@@ -328,17 +321,14 @@ Scope (SMB2.MUX0.CH01)
             Name (_CRS, ResourceTemplate ()
             {
                 I2cSerialBus (0x53, ControllerInitiated, I2C_SPEED,
-                              AddressingMode7Bit, "^SMB1", 0x00,
+                              AddressingMode7Bit, "\\_SB.PCI0.SMB1", 0x00,
                               ResourceConsumer,,)
             })
             Name (_DSD, Package ()
             {
                 ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
                 Package () {
-                    Package (2) { "compatible", "atmel,at24" },
-                    Package (2) { "pagesize", 1 },
-                    Package (2) { "byte-len", 256 },
-                    Package (2) { "world-readable", 1 },
+                    Package (2) { "compatible", "jedec,spd" },
                 }
             })
         }
@@ -352,7 +342,7 @@ Scope (SMB2.MUX0.CH01)
             Name (_CRS, ResourceTemplate ()
             {
                 I2cSerialBus (0x2e, ControllerInitiated, I2C_SPEED,
-                              AddressingMode7Bit, "^SMB1", 0x00,
+                              AddressingMode7Bit, "\\_SB.PCI0.SMB1", 0x00,
                               ResourceConsumer,,)
             })
             Name (_DSD, Package ()
@@ -374,7 +364,7 @@ Scope (SMB2.MUX0.CH01)
             Name (_CRS, ResourceTemplate ()
             {
                 I2cSerialBus (0x69, ControllerInitiated, I2C_SPEED,
-                              AddressingMode7Bit, "^SMB1", 0x00,
+                              AddressingMode7Bit, "\\_SB.PCI0.SMB1", 0x00,
                               ResourceConsumer,,)
             })
             Name (_DSD, Package ()
